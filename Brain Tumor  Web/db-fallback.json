@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": "usr_41rbvruoadi",
+      "createdAt": "2026-06-03T06:57:55.905Z",
+      "name": "Guest User",
+      "email": "guest_9961raxe0ye@neurovision.local",
+      "password": "guest-placeholder-password",
+      "role": "guest"
+    }
+  ],
+  "predictions": [
+    {
+      "id": "scan_w37480sic9m",
+      "timestamp": "2026-06-03T07:11:03.659Z",
+      "userId": "usr_41rbvruoadi",
+      "imageUrl": "/uploads/mri/usr_41rbvruoadi_1780470661156_original.jpg",
+      "prediction": "glioma",
+      "confidence": 0.9875380992889404,
+      "gradcamImage": "/uploads/gradcam/usr_41rbvruoadi_1780470661156_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.9875380992889404,
+        "meningioma": 0.012350207194685936,
+        "notumor": 0.00005174128818907775,
+        "pituitary": 0.00005988349948893301
+      }
+    },
+    {
+      "id": "scan_c8ekbh7agon",
+      "timestamp": "2026-06-03T07:11:37.246Z",
+      "userId": "usr_41rbvruoadi",
+      "imageUrl": "/uploads/mri/usr_41rbvruoadi_1780470696569_original.jpg",
+      "prediction": "notumor",
+      "confidence": 0.6488481760025024,
+      "gradcamImage": "/uploads/gradcam/usr_41rbvruoadi_1780470696569_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.04038532078266144,
+        "meningioma": 0.17647391557693481,
+        "notumor": 0.6488481760025024,
+        "pituitary": 0.13429251313209534
+      }
+    },
+    {
+      "id": "scan_kotrdymj5dp",
+      "timestamp": "2026-06-03T07:13:07.999Z",
+      "userId": "usr_41rbvruoadi",
+      "imageUrl": "/uploads/mri/usr_41rbvruoadi_1780470787044_original.png",
+      "prediction": "notumor",
+      "confidence": 0.975324809551239,
+      "gradcamImage": "/uploads/gradcam/usr_41rbvruoadi_1780470787044_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.00027832601335830986,
+        "meningioma": 0.008135422132909298,
+        "notumor": 0.975324809551239,
+        "pituitary": 0.01626143604516983
+      }
+    },
+    {
+      "id": "scan_6vhn0q6iyvy",
+      "timestamp": "2026-06-03T07:32:01.670Z",
+      "userId": "usr_41rbvruoadi",
+      "imageUrl": "/uploads/mri/usr_41rbvruoadi_1780471919162_original.jpg",
+      "prediction": "glioma",
+      "confidence": 0.9742358326911926,
+      "gradcamImage": "/uploads/gradcam/usr_41rbvruoadi_1780471919162_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.9742358326911926,
+        "meningioma": 0.020427890121936798,
+        "notumor": 0.004420124460011721,
+        "pituitary": 0.0009161874186247587
+      }
+    }
+  ]
+}
