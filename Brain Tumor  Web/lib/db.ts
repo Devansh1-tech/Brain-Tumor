@@ -1,6 +1,7 @@
 import { prisma as prismaClient } from './prisma';
 import fs from 'fs';
 import path from 'path';
+import net from 'net';
 
 const FALLBACK_FILE_PATH = path.join(process.cwd(), 'db-fallback.json');
 
@@ -30,11 +31,55 @@ function saveLocalDb(data: LocalDb) {
   fs.writeFileSync(FALLBACK_FILE_PATH, JSON.stringify(data, null, 2));
 }
 
-// A helper flag to cache if postgres is down
-let isPostgresOffline = false;
+// A helper flag to cache if postgres is down. Default to true until checked.
+let isPostgresOffline = true;
+
+// Helper to check if PostgreSQL port is open
+function checkPostgresPort(): Promise<boolean> {
+  return new Promise((resolve) => {
+    let host = 'localhost';
+    let port = 5432;
+    
+    const dbUrl = process.env.DATABASE_URL || '';
+    const match = dbUrl.match(/@([^/:]+)(?::(\d+))?/);
+    if (match) {
+      host = match[1];
+      if (match[2]) {
+        port = parseInt(match[2], 10);
+      }
+    }
+    
+    const socket = new net.Socket();
+    socket.setTimeout(1000);
+    
+    socket.on('connect', () => {
+      socket.destroy();
+      resolve(true);
+    });
+    
+    socket.on('timeout', () => {
+      socket.destroy();
+      resolve(false);
+    });
+    
+    socket.on('error', () => {
+      socket.destroy();
+      resolve(false);
+    });
+    
+    socket.connect(port, host);
+  });
+}
 
 // Check connection to Postgres once on boot
 async function checkDbConnection() {
+  const portOpen = await checkPostgresPort();
+  if (!portOpen) {
+    isPostgresOffline = true;
+    console.warn("⚠️ [NeuroVision DB] PostgreSQL port is closed. Falling back to JSON file-based database.");
+    return;
+  }
+
   try {
     await prismaClient.$connect();
     isPostgresOffline = false;

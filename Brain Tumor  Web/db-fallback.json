@@ -69,6 +69,21 @@
         "notumor": 0.004420124460011721,
         "pituitary": 0.0009161874186247587
       }
+    },
+    {
+      "id": "scan_gyf4wh8ud08",
+      "timestamp": "2026-06-04T02:25:42.398Z",
+      "userId": "78efc8d3-787f-472b-8970-fd8ac13df1b5",
+      "imageUrl": "/uploads/mri/78efc8d3-787f-472b-8970-fd8ac13df1b5_1780539939818_original.jpg",
+      "prediction": "glioma",
+      "confidence": 0.590967059135437,
+      "gradcamImage": "/uploads/gradcam/78efc8d3-787f-472b-8970-fd8ac13df1b5_1780539939818_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.590967059135437,
+        "meningioma": 0.40556639432907104,
+        "notumor": 0.00003838994962279685,
+        "pituitary": 0.003428175812587142
+      }
     }
   ]
 }

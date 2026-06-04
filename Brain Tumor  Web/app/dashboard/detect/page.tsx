@@ -97,7 +97,12 @@ export default function MriDetectionPage() {
         body: formData,
       });
 
-      const data = await res.json();
+      let data: any = {};
+      try {
+        data = await res.json();
+      } catch (err) {
+        // Not valid JSON
+      }
 
       if (!res.ok) {
         throw new Error(data.error || 'Diagnostic scan failed.');

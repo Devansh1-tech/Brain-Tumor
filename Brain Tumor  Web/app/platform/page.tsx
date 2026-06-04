@@ -39,7 +39,12 @@ export default function PlatformPage() {
           body: JSON.stringify({ name, email, password }),
         });
         
-        const data = await res.json();
+        let data: any = {};
+        try {
+          data = await res.json();
+        } catch (err) {
+          // Not valid JSON
+        }
         
         if (!res.ok) {
           toast.error(data.error || 'Registration failed');
@@ -71,7 +76,12 @@ export default function PlatformPage() {
           body: JSON.stringify({ email, password, rememberMe }),
         });
         
-        const data = await res.json();
+        let data: any = {};
+        try {
+          data = await res.json();
+        } catch (err) {
+          // Not valid JSON
+        }
         
         if (!res.ok) {
           toast.error(data.error || 'Authentication failed');
@@ -99,7 +109,12 @@ export default function PlatformPage() {
         body: JSON.stringify({ isGuest: true }),
       });
       
-      const data = await res.json();
+      let data: any = {};
+      try {
+        data = await res.json();
+      } catch (err) {
+        // Not valid JSON
+      }
       
       if (!res.ok) {
         toast.error(data.error || 'Guest access failed');
