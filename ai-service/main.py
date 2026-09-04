@@ -4,8 +4,10 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from model_loader import ModelManager
 
-# Define model path - sibling directory on the same workspace
-MODEL_PATH = r"d:\Tumor web\Brain Tumor  Web\model\best_efficientnet_model.h5"
+# Define model path - dynamically resolve relative to this file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_MODEL_PATH = os.path.normpath(os.path.join(BASE_DIR, "..", "Brain Tumor  Web", "model", "best_efficientnet_model.h5"))
+MODEL_PATH = os.getenv("MODEL_PATH", DEFAULT_MODEL_PATH)
 
 app = FastAPI(
     title="NeuroVision AI - Brain Tumor Inference Service",

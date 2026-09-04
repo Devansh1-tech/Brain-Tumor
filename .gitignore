@@ -15,3 +15,17 @@ node_modules
 .DS_Store
 ai-service/venv
 ai-service/__pycache__
+
+# Uploads
+Brain Tumor  Web/public/uploads/
+
+# Prevent large archive and dataset files
+*.zip
+*.tar.gz
+*.7z
+*.rar
+
+# Python & Environment ignores
+venv/
+.venv/
+*.log

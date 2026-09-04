@@ -7,6 +7,14 @@
       "email": "guest_9961raxe0ye@neurovision.local",
       "password": "guest-placeholder-password",
       "role": "guest"
+    },
+    {
+      "id": "usr_cw36bpqcdop",
+      "createdAt": "2026-09-04T11:57:19.824Z",
+      "name": "Guest User",
+      "email": "guest_l2exuvvpk2@neurovision.local",
+      "password": "guest-placeholder-password",
+      "role": "guest"
     }
   ],
   "predictions": [
@@ -83,6 +91,51 @@
         "meningioma": 0.40556639432907104,
         "notumor": 0.00003838994962279685,
         "pituitary": 0.003428175812587142
+      }
+    },
+    {
+      "id": "scan_qjyeb1zna7d",
+      "timestamp": "2026-09-04T11:57:46.371Z",
+      "userId": "usr_cw36bpqcdop",
+      "imageUrl": "/uploads/mri/usr_cw36bpqcdop_1788523062973_original.jpg",
+      "prediction": "glioma",
+      "confidence": 0.7247264385223389,
+      "gradcamImage": "/uploads/gradcam/usr_cw36bpqcdop_1788523062973_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.7247264385223389,
+        "meningioma": 0.27182289958000183,
+        "notumor": 0.0016200026730075479,
+        "pituitary": 0.0018306347774341702
+      }
+    },
+    {
+      "id": "scan_jvqcg5ykxlm",
+      "timestamp": "2026-09-04T11:58:10.525Z",
+      "userId": "usr_cw36bpqcdop",
+      "imageUrl": "/uploads/mri/usr_cw36bpqcdop_1788523089766_original.jpg",
+      "prediction": "glioma",
+      "confidence": 0.9674507975578308,
+      "gradcamImage": "/uploads/gradcam/usr_cw36bpqcdop_1788523089766_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.9674507975578308,
+        "meningioma": 0.031549807637929916,
+        "notumor": 0.0008682263433001935,
+        "pituitary": 0.00013118637434672564
+      }
+    },
+    {
+      "id": "scan_vlkk169uwpn",
+      "timestamp": "2026-09-04T12:00:33.726Z",
+      "userId": "usr_cw36bpqcdop",
+      "imageUrl": "/uploads/mri/usr_cw36bpqcdop_1788523232944_original.png",
+      "prediction": "notumor",
+      "confidence": 0.9945751428604126,
+      "gradcamImage": "/uploads/gradcam/usr_cw36bpqcdop_1788523232944_gradcam.jpg",
+      "probabilities": {
+        "glioma": 0.0001622575509827584,
+        "meningioma": 0.0038388667162507772,
+        "notumor": 0.9945751428604126,
+        "pituitary": 0.0014236471615731716
       }
     }
   ]
